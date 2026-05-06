@@ -1,0 +1,73 @@
+{
+  "repo": "meridian-algo-flow-mark",
+  "language": "OCaml",
+  "category": "Algorithms",
+  "goal": "Package an OCaml local lab for flow analysis with bounded scenario files, conflict explanations, and documented operating limits.",
+  "review_model": {
+    "terms": [
+      "input width",
+      "search depth",
+      "boundary pressure",
+      "complexity"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "input width",
+      "signal": 43,
+      "slack": 31,
+      "drag": 13,
+      "confidence": 47,
+      "score": 125,
+      "lane": "watch"
+    },
+    {
+      "name": "stress",
+      "focus": "search depth",
+      "signal": 69,
+      "slack": 36,
+      "drag": 12,
+      "confidence": 58,
+      "score": 196,
+      "lane": "ship"
+    },
+    {
+      "name": "edge",
+      "focus": "boundary pressure",
+      "signal": 85,
+      "slack": 51,
+      "drag": 11,
+      "confidence": 48,
+      "score": 236,
+      "lane": "ship"
+    },
+    {
+      "name": "recovery",
+      "focus": "complexity",
+      "signal": 59,
+      "slack": 54,
+      "drag": 12,
+      "confidence": 83,
+      "score": 219,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "input width",
+      "signal": 53,
+      "slack": 44,
+      "drag": 17,
+      "confidence": 54,
+      "score": 153,
+      "lane": "ship"
+    }
+  ]
+}
